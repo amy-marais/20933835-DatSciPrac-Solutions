@@ -1,11 +1,7 @@
-# Purpose
-
-Purpose of this work folder.
-
-Ideally store a minimum working example data set in data folder.
-
-Add binary files in bin, and closed R functions in code. Human Readable
-settings files (e.g. csv) should be placed in settings/
+#Purpose This is the root readme and details how I approached each
+question in the data science practical exam. Every question is in its
+own folder that contains the data and code relevant to that question.
+The data is not commited to github.
 
 ``` r
 rm(list = ls()) # Clean your environment:
@@ -13,8 +9,8 @@ gc() # garbage collection - It can be useful to call gc after a large object has
 ```
 
     ##          used (Mb) gc trigger (Mb) max used (Mb)
-    ## Ncells 513817 27.5    1145927 61.2   644242 34.5
-    ## Vcells 884456  6.8    8388608 64.0  1634861 12.5
+    ## Ncells 513813 27.5    1145915 61.2   644242 34.5
+    ## Vcells 884379  6.8    8388608 64.0  1634861 12.5
 
 ``` r
 library(tidyverse)
@@ -32,10 +28,6 @@ library(tidyverse)
 ``` r
 list.files('code/', full.names = T, recursive = T) %>% .[grepl('.R', .)] %>% as.list() %>% walk(~source(.))
 ```
-
-#Introduction This is the root readme and details how I approached each
-question in the data science practical exam. Every question is in its
-own folder that contains the data and code relevant to that question.
 
 # Question 1
 
@@ -329,8 +321,8 @@ gc()
 ```
 
     ##            used  (Mb) gc trigger (Mb)  max used (Mb)
-    ## Ncells  2172593 116.1    4043681  216   4043681  216
-    ## Vcells 59136330 451.2  141160247 1077 141160247 1077
+    ## Ncells  2172589 116.1    4043660  216   4043660  216
+    ## Vcells 59136253 451.2  141160170 1077 141160170 1077
 
 ### Dataset 3: Deaths_by_cause
 
@@ -737,7 +729,7 @@ temp <- tidy_weather_seasons %>%
     ## {
     ##     UseMethod("ungroup")
     ## }
-    ## <bytecode: 0x0000018cde23d6f8>
+    ## <bytecode: 0x000001e9a866d648>
     ## <environment: namespace:dplyr>
 
 ``` r
@@ -791,8 +783,8 @@ gc()
 ```
 
     ##            used  (Mb) gc trigger (Mb)  max used (Mb)
-    ## Ncells  2214008 118.3    4043681  216   4043681  216
-    ## Vcells 60789083 463.8  141160247 1077 141160247 1077
+    ## Ncells  2214004 118.3    4043660  216   4043660  216
+    ## Vcells 60789006 463.8  141160170 1077 141160170 1077
 
 # Question 3
 
@@ -1111,8 +1103,8 @@ gc()
 ```
 
     ##            used  (Mb) gc trigger (Mb)  max used (Mb)
-    ## Ncells  2506969 133.9    4043681  216   4043681  216
-    ## Vcells 67664848 516.3  141160247 1077 141160247 1077
+    ## Ncells  2506965 133.9    4043660  216   4043660  216
+    ## Vcells 67664771 516.3  141160170 1077 141160170 1077
 
 # Question 4
 
@@ -1364,7 +1356,7 @@ tidy_playstore <- googleplaystore %>%
 
     ## function (object, ...) 
     ## UseMethod("na.omit")
-    ## <bytecode: 0x0000018cd976fd88>
+    ## <bytecode: 0x000001e9a3ba8508>
     ## <environment: namespace:stats>
 
 I ran out of time to do more data wrangling. I prioritized getting
