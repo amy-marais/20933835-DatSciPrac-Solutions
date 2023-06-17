@@ -4,7 +4,7 @@ output:
     variant: markdown_github
 ---
 
-#Purpose
+# Purpose
 
 This is the root readme and details how I approached each question in the data science practical exam. Every question is in its own folder (within the "20933835" folder), that contains the data and code folder relevant to that question. The data is not commited to github. 
 Dear Nico, apologies for the naming conventions, I realised too late that they were not according to your specifications. The project is called "Solution" instead of my student number, and the folder that contains all the questions and relevant solutions is called my student number, 20933835. Hopefully this enough clarity for you to navigate my solutions. 

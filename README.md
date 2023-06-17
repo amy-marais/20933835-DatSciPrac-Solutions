@@ -1,4 +1,4 @@
-#Purpose
+# Purpose
 
 This is the root readme and details how I approached each question in
 the data science practical exam. Every question is in its own folder
@@ -731,7 +731,7 @@ temp <- tidy_weather_seasons %>%
     ## {
     ##     UseMethod("ungroup")
     ## }
-    ## <bytecode: 0x000001799c6d85c8>
+    ## <bytecode: 0x0000020afe3775d8>
     ## <environment: namespace:dplyr>
 
 ``` r
@@ -1357,7 +1357,7 @@ tidy_playstore <- googleplaystore %>%
 
     ## function (object, ...) 
     ## UseMethod("na.omit")
-    ## <bytecode: 0x0000017996231d78>
+    ## <bytecode: 0x0000020af7ed18f8>
     ## <environment: namespace:stats>
 
 I ran out of time to do more data wrangling. I prioritized getting
