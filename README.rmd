@@ -4,14 +4,8 @@ output:
     variant: markdown_github
 ---
 
-# Purpose
-
-Purpose of this work folder.
-
-Ideally store a minimum working example data set in data folder.
-
-Add binary files in bin, and closed R functions in code. Human Readable settings files (e.g. csv) should be placed in settings/
-
+#Purpose
+This is the root readme and details how I approached each question in the data science practical exam. Every question is in its own folder that contains the data and code relevant to that question. The data is not commited to github. 
 
 ```{r}
 
@@ -20,9 +14,6 @@ gc() # garbage collection - It can be useful to call gc after a large object has
 library(tidyverse)
 list.files('code/', full.names = T, recursive = T) %>% .[grepl('.R', .)] %>% as.list() %>% walk(~source(.))
 ```
-
-#Introduction 
-This is the root readme and details how I approached each question in the data science practical exam. Every question is in its own folder that contains the data and code relevant to that question. 
 
 # Question 1 
 
