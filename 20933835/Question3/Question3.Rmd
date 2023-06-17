@@ -1,0 +1,100 @@
+---
+title: "Battle of the Bands: Coldplay vs Metallica"
+documentclass: elsarticle
+Thesis_FP: no
+output:
+  html_document:
+    df_print: paged
+  pdf_document:
+    keep_tex: yes
+    template: Tex/TexDefault.txt
+    fig_width: 3.5
+    fig_height: 3.5
+Author1: Amy Marais (20933835)
+Ref1: Stellenbosch University, Western Cape, South Africa
+Email1: 20933835@sun.ac.za
+BottomRFooter: \footnotesize Page \thepage
+addtoprule: yes
+margin: 2.3
+bottom: 2
+top: 2.5
+HardSet_layout: yes
+linenumbers: no
+bibliography: Tex/ref.bib
+csl: "Tex/harvard-stellenbosch-university.csl"
+RemovePreprintSubmittedTo: yes
+toc: no
+numbersections: yes
+fontsize: 12pt
+linestretch: 1.2
+link-citations: yes
+AddTitle: yes
+abstract: |
+  Both Coldplay and Metallica are firm favourites for people's favourite bands of all time, with both bands making music for over two decades. But, are these bands really comparable? Who should music producers choose to emulate if they wish to have a long and successful music career? This is what is analysed in this report.
+---
+
+<!-- First: Set your default preferences for chunk options: -->
+
+<!-- If you want a chunk's code to be printed, set echo = TRUE. message = FALSE stops R printing ugly package loading details in your final paper too. I also suggest setting warning = FALSE and checking for warnings in R, else you might find ugly warnings in your paper. -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width = 6, fig.height = 5, fig.pos="H", fig.pos = 'H')
+# Note: Include = FALSE implies the code is executed, but not printed in your pdf.
+# warning and message = FALSE implies ugly messages and warnings are removed from your pdf.
+# These should be picked up when you execute the command chunks (code sections below) in your rmd, not printed in your paper!
+
+# Lets load in example data, and see how this can be stored and later called from your 'data' folder.
+if(!require("tidyverse")) install.packages("tidyverse")
+library(tidyverse)
+#Example_data <- Texevier::Ex_Dat
+
+# Notice that as you are working in a .Rproj file (I am assuming you are) - the relative paths of your directories start at your specified root.
+# This means that when working in a .Rproj file, you never need to use getwd() - it is assumed as your base root automatically.
+#write_rds(Example_data, path = "data/Example_data.rds")
+
+```
+
+
+<!-- ############################## -->
+<!-- # Start Writing here: -->
+<!-- ############################## -->
+
+## Introduction \label{Introduction}
+Coldplay and Metallica are legendary bands that have managed to stay musically relevant for over two decades. These bands have distinctly different music styles but both seem to appeal to the masses. The bands are compared on the basis of popularity, so that music producers can get a clear idea of what style to emulate if they wish to increase their chances of having a long and successful music career. 
+
+## Popularity and Longevity 
+
+The figure below depicts Coldplay's popularity by album that they've produced.
+
+\hfill
+```{r}
+knitr::include_graphics("C:/DatSci/Solution/20933835/Question3/Figures/Figure1.png")
+```
+\hfill
+
+The figure indicates that not all albums were hits, but most of them included a hit song, as indicated by the outliers. We see most albums lying in the 75th percentile of popularity, confirming that Colplay has been a rather popular band for a long time. 
+
+Similarly, the figure below summarises Metallica's popularity by album. 
+
+\hfill
+```{r}
+knitr::include_graphics("C:/DatSci/Solution/20933835/Question3/Figures/Figure2.png")
+```
+\hfill
+
+Upon inspection, it becomes clear that Metallica released many many more albums than Coldplay, with more individual songs being very popular (as indicated by the outliers). Metallica's popularity tends to fall within either the first or third percentile of popularity, implying that the albums tend to hit or miss the mark with their audiences (creating a polarising effect on their popularity).
+
+What is clear from both graphics is that not all albums are hits and neither band could remain consistently popular. Music producers and artists should thus not be discouraged if they release unpopular albums, and should keep producing new music. 
+
+From the preceding figures it is unclear whether one band is more popular than another. The figure below compares the bands' average popularity over their existence. 
+
+\hfill
+```{r}
+knitr::include_graphics("C:/DatSci/Solution/20933835/Question3/Figures/Figure3.png")
+```
+\hfill 
+
+There is a vast difference between the bands' average popularity. In fact, Coldplay is 43.55% more popular than Metallica on average. This clearly indicates that music producers should try and emulate Coldplay rather than Metallica if they want to increase their chances of having a long and successful career in music. 
+
+## Conclusion
+Coldplay is far more popular than Metallica on average, where Metallica has a more polarising effect on their audience; sometimes they are just as popular as Colplay, and sometimes they are rather unpopular. Musicians and producers should thus try and emulate Coldplay if they want to increase their chances of having a long and successful musical career, and avoid being "one-hit-wonders." Both bands seemed to have found success by continually releasing albums, even if preceding albums are unpopular. 

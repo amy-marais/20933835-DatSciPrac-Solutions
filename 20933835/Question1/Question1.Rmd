@@ -1,0 +1,158 @@
+---
+# IMPORTANT: Change settings here, but DO NOT change the spacing.
+# Remove comments and add values where applicable.
+# The descriptions below should be self-explanatory
+
+title: "How Covid-19's Progression Differed Across Continents"
+#subtitle: "This will appear as Right Header"
+
+documentclass: "elsarticle"
+
+# --------- Thesis title (Optional - set to FALSE by default).
+# You can move the details below around as you please.
+Thesis_FP: FALSE
+# Entry1: "An unbelievable study with a title spanning multiple lines."
+# Entry2: "\\textbf{Some Guy}" # textbf for bold
+# Entry3: "A thesis submitted toward the degree of Doctor of Philosophy"
+# Uni_Logo: Tex/Logo.png # Place a logo in the indicated location (from your root, e.g. defaults to ~/Tex/Logo.png) and uncomment this line. Leave uncommented for no image
+# Logo_width: 0.3 # If using a logo - use this to set width (size) of image
+# Entry4: "Under the supervision of: \\vfill Prof. Joe Smith and Dr. Frank Smith"
+# Entry5: "Stellenbosch University"
+# Entry6: April 2020
+# Entry7:
+# Entry8:
+
+# --------- Front Page
+# Comment: ----- Follow this pattern for up to 5 authors
+AddTitle: TRUE # Use FALSE when submitting to peer reviewed platform. This will remove author names.
+Author1: "Amy Marais^[__Contributions:__  \\newline _The authors would like to thank no institution for money donated to this project. Thank you sincerely._]"  # First Author - note the thanks message displayed as an italic footnote of first page.
+Ref1: "Stellenbosch University, South Africa" # First Author's Affiliation
+Email1: "20933835\\@sun.ac.za" # First Author's Email address
+
+# Author2: "John Smith"
+# Ref2: "Some other Institution, Cape Town, South Africa"
+# Email2: "John\\@gmail.com"
+# CommonAffiliation_12: TRUE # If Author 1 and 2 have a common affiliation. Works with _13, _23, etc.
+# 
+# Author3: "John Doe"
+# Email3: "Joe\\@gmail.com"
+
+#CorrespAuthor_1: TRUE  # If corresponding author is author 3, e.g., use CorrespAuthor_3: TRUE
+
+# Comment out below to remove both. JEL Codes only given if keywords also given.
+keywords: "Covid-19 \\sep Regions \\sep Data Analysis" # Use \\sep to separate
+#JELCodes: "L250 \\sep L100"
+
+# ----- Manage headers and footers:
+#BottomLFooter: $Title$
+#BottomCFooter:
+#TopLHeader: \leftmark # Adds section name at topleft. Remove comment to add it.
+BottomRFooter: "\\footnotesize Page \\thepage" # Add a '#' before this line to remove footer.
+addtoprule: TRUE
+addfootrule: TRUE               # Use if footers added. Add '#' to remove line.
+
+# --------- page margins:
+margin: 2.3 # Sides
+bottom: 2 # bottom
+top: 2.5 # Top
+HardSet_layout: TRUE # Hard-set the spacing of words in your document. This will stop LaTeX squashing text to fit on pages, e.g.
+# This is done by hard-setting the spacing dimensions. Set to FALSE if you want LaTeX to optimize this for your paper.
+
+# --------- Line numbers
+linenumbers: FALSE # Used when submitting to journal
+
+# ---------- References settings:
+# You can download cls format here: https://www.zotero.org/ - simply search for your institution. You can also edit and save cls formats here: https://editor.citationstyles.org/about/
+# Hit download, store it in Tex/ folder, and change reference below - easy.
+bibliography: Tex/ref.bib       # Do not edit: Keep this naming convention and location.
+csl: Tex/harvard-stellenbosch-university.csl # referencing format used.
+# By default, the bibliography only displays the cited references. If you want to change this, you can comment out one of the following:
+#nocite: '@*' # Add all items in bibliography, whether cited or not
+# nocite: |  # add specific references that aren't cited
+#  @grinold2000
+#  @Someoneelse2010
+
+# ---------- General:
+RemovePreprintSubmittedTo: TRUE  # Removes the 'preprint submitted to...' at bottom of titlepage
+Journal: "Journal of Finance"   # Journal that the paper will be submitting to, if RemovePreprintSubmittedTo is set to TRUE.
+toc: FALSE                       # Add a table of contents
+numbersections: TRUE             # Should sections (and thus figures and tables) be numbered?
+fontsize: 11pt                  # Set fontsize
+linestretch: 1.2                # Set distance between lines.
+link-citations: TRUE            # This creates dynamic links to the papers in reference list.
+
+### Adding additional latex packages:
+# header-includes:
+#    - \usepackage{colortbl} # Add additional packages here.
+
+output:
+  pdf_document:
+    keep_tex: TRUE
+    template: Tex/TexDefault.txt
+    fig_width: 3.5 # Adjust default figure sizes. This can also be done in the chunks of the text.
+    fig_height: 3.5
+abstract: |
+  The Covid-19 pandemic had devastating effects across the globe. Were some regions affected significantly differently than other? This question is evaluated by analysing Covid-19 specific data for each continent.
+---
+
+<!-- First: Set your default preferences for chunk options: -->
+
+<!-- If you want a chunk's code to be printed, set echo = TRUE. message = FALSE stops R printing ugly package loading details in your final paper too. I also suggest setting warning = FALSE and checking for warnings in R, else you might find ugly warnings in your paper. -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width = 3, fig.height = 3, fig.pos="H", fig.pos = 'H')
+# Note: Include = FALSE implies the code is executed, but not printed in your pdf.
+# warning and message = FALSE implies ugly messages and warnings are removed from your pdf.
+# These should be picked up when you execute the command chunks (code sections below) in your rmd, not printed in your paper!
+
+# Lets load in example data, and see how this can be stored and later called from your 'data' folder.
+if(!require("tidyverse")) install.packages("tidyverse")
+library(tidyverse)
+#Example_data <- Texevier::Ex_Dat
+
+# Notice that as you are working in a .Rproj file (I am assuming you are) - the relative paths of your directories start at your specified root.
+# This means that when working in a .Rproj file, you never need to use getwd() - it is assumed as your base root automatically.
+#write_rds(Example_data, path = "data/Example_data.rds")
+
+```
+
+
+<!-- ############################## -->
+<!-- # Start Writing here: -->
+<!-- ############################## -->
+
+# Introduction \label{Introduction} {-}
+The Covid-19 pandemic has wreaked havoc on many facets of our lives, and continue to affect travel, work and how people socially interact. This report includes some graphs and figures on the evolution of the breakout. Specifically, it provides comparisons on how continents differ. 
+
+# Data  {-}
+The data used was sourced from 'Our World In Data.' The dataset is very broad and many more figures and statistics could have been created than what is presented here. This report focuses on the total cases and deaths recorded for each continent so that we can compare the progression of the pandemic in different regions. The region of Antarctica is excluded from the analysis due to lack of data. 
+
+# Results {-}
+Let's consider the cumulative Covid-19 cases for each continent: 
+
+\hfill
+```{r} 
+knitr::include_graphics("C:/DatSci/Solution/20933835/Question1/Figures/Figure1.png")
+```
+\hfill
+
+While the continents cannot be distinguished clearly, the rate of infection is visualised and we can see when continents were able to "flatten the curve", or more prominently, when they were not able to do so. Notably, the rate of infection is rather high during the second half of the pandemic, likely due to the spread of the more infectious, but less deadly, Omicron variant. 
+
+\hfill
+```{r} 
+knitr::include_graphics("C:/DatSci/Solution/20933835/Question1/Figures/Figure2.png")
+```
+\hfill
+
+The above figure shows only the newly recorded Covid-19 cases (i.e. we do no longer see the rate of infections but rather the number of infections). Asia and Europe record more cases of Covid-19, which could be due to dense populations or a higher frequency of testing, or likely a combination of both. The suspicion that other regions had fewer cases is squashed when we look at the number of deaths in the figure below.
+
+\hfill
+```{r}
+knitr::include_graphics("C:/DatSci/Solution/20933835/Question1/Figures/Figure3.png")
+```
+\hfill
+
+It becomes clear that more people passed from Covid-19 than were tested for Covid-19, in all the continents except for Oceania (that had implemented extreme lockdown and testing measures). Lack of testing could be due to having a limited number of tests available and/or a limited capacity of laboratories to process tests, particularly in Africa and South America, where deaths are significantly higher than reported cases. 
+
+# Conclusion {-}
+Oceania implemented extremely strict prevention measures, which were successful in curbing the spread of Covid-19, as well as preventing Covid-19 deaths. With the exception of Oceania, every continent had significant numbers of deaths due to Covid-19, and no continent seemed to stand out in severity among the rest. The analysis did however make it clear that there was a lack of testing, since the death toll far outweighed the number of reported cases, for all continents except Oceania. 

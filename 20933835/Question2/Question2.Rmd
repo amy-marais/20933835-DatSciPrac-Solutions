@@ -1,0 +1,86 @@
+---
+title: "Yes, it Really is Cold in the UK"
+documentclass: elsarticle
+Thesis_FP: no
+output:
+  html_document:
+    df_print: paged
+  pdf_document:
+    keep_tex: yes
+    template: Tex/TexDefault.txt
+    fig_width: 3.5
+    fig_height: 3.5
+Author1: Amy Marais (20933835)
+Ref1: Stellenbosch University, Western Cape, South Africa
+Email1: 20933835@sun.ac.za
+BottomRFooter: \footnotesize Page \thepage
+addtoprule: yes
+margin: 2.3
+bottom: 2
+top: 2.5
+HardSet_layout: yes
+linenumbers: no
+bibliography: Tex/ref.bib
+csl: "Tex/harvard-stellenbosch-university.csl"
+RemovePreprintSubmittedTo: yes
+toc: no
+numbersections: yes
+fontsize: 12pt
+linestretch: 1.2
+link-citations: yes
+AddTitle: yes
+abstract: no
+---
+
+<!-- First: Set your default preferences for chunk options: -->
+
+<!-- If you want a chunk's code to be printed, set echo = TRUE. message = FALSE stops R printing ugly package loading details in your final paper too. I also suggest setting warning = FALSE and checking for warnings in R, else you might find ugly warnings in your paper. -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width = 3, fig.height = 3, fig.pos="H", fig.pos = 'H')
+# Note: Include = FALSE implies the code is executed, but not printed in your pdf.
+# warning and message = FALSE implies ugly messages and warnings are removed from your pdf.
+# These should be picked up when you execute the command chunks (code sections below) in your rmd, not printed in your paper!
+
+# Lets load in example data, and see how this can be stored and later called from your 'data' folder.
+if(!require("tidyverse")) install.packages("tidyverse")
+library(tidyverse)
+#Example_data <- Texevier::Ex_Dat
+
+# Notice that as you are working in a .Rproj file (I am assuming you are) - the relative paths of your directories start at your specified root.
+# This means that when working in a .Rproj file, you never need to use getwd() - it is assumed as your base root automatically.
+
+```
+
+<!-- ############################## -->
+<!-- # Start Writing here: -->
+<!-- ############################## -->
+
+## Introduction \label{Introduction}
+
+My friend not only had a poor lapse in judgement in wanting to move the UK, but she is also convinced that the weather in the mid-parts of the UK, where she intends to reside, is mostly sunny, and not rainy or cold at all. This report is aims to convince her that the weather where she is moving is terribly cold, and uses statistics and figures to do so.
+
+## Analysis {-}
+
+The figure below summarises the average temperatures (in degrees Celsius) for the mid part of the UK for every season over the last 50 years. 
+
+\hfill
+```{r}
+knitr::include_graphics("C:/DatSci/Solution/20933835/Question2/Figures/Figure5.png")
+```
+\hfill
+
+The boxplots show that average temperatures are rarely above 18 degrees in the summer, with a maximum temperature of approximately 20 degrees being depicted as an outlier. This means that the summer months are, on average, quite chilly and comparable to a South African winter. Additionally, the other seasons have average temperatures between 5 and 10 degrees celsius. 
+
+If this is not convincing, the figure below shows the weather for 2022. It clearly shows that most days last year were either cold or SUPER cold, with only a few days being hot. But, luckily, if my friend does decide to move to the UK, she will only experience a few disgustingly cold days. 
+
+\hfill
+```{r}
+knitr::include_graphics("C:/DatSci/Solution/20933835/Question2/Figures/Figure4.png")
+```
+\hfill
+
+## Conclusion {-}
+The mid-parts of the UK are at best chilly all year round, with only a few hot days occuring in the year. The summer season is rarely warmer than 18 degrees Celsius, which makes it comparable to a South African winter. Most days in the mid regions of the UK are either cold or SUPER cold. 
+
+
